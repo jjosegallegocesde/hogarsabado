@@ -56,14 +56,14 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form action="<?php echo(base_url("public/personas/editar/".$usuario["id"])) ?>" method="POST">
                                         <div class="form-group">
                                             <label>Nombre:</label>
-                                            <input type="text" class="form-control" value="<?= $usuario["nombre"]?>">
+                                            <input type="text" class="form-control" name="nombreEditar" value="<?= $usuario["nombre"]?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Descripcion:</label>
-                                                <textarea class="form-control" rows="3"><?= $usuario["descripcion"]?></textarea>
+                                                <textarea class="form-control" rows="3" name="descripcionEditar"><?= $usuario["descripcion"]?></textarea>
                                         </div>
                                         <button type="submit" class="btn btn-warning">Enviar</button>
                                     </form>

@@ -102,6 +102,42 @@ class RegistroControlador extends BaseController{
 
 	}
 
+	public function editar($id){
+
+		//1. Recibir los datos desde la vista
+		$nombre=$this->request->getPost("nombreEditar");
+		$descripcion=$this->request->getPost("descripcionEditar");
+
+		//2. Organizar los datos que llegan de las vistas
+		// en un arreglo asociativo 
+		//(las claves deben ser iguales a los campos o atributos de la tabla en BD)
+		$datosEnvio=array(
+			"nombre"=>$nombre,
+			"descripcion"=>$descripcion	
+		);
+
+		//3. Crear un objeto del MODELO para porder 
+		//realizar la transacción en BD
+		$modeloPersonas= new Modelopersonas();
+
+		//4. Ejecutar el metodo update del modelo
+		try{
+
+			$modeloPersonas->update($id,$datosEnvio);
+			echo("Registro editado con exito");
+
+
+		}catch(\Exception $error){
+
+			echo($error->getMessage());
+
+		}
+		
+
+		
+
+	}
+
 	//--------------------------------------------------------------------
 
 }

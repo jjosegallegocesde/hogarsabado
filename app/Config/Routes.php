@@ -35,6 +35,7 @@ $routes->get('/personas', 'RegistroControlador::index');
 $routes->get('/personas/listado', 'RegistroControlador::buscar');
 $routes->post('/personas/registro', 'RegistroControlador::registrar');
 $routes->get('/personas/eliminar/(:any)', 'RegistroControlador::eliminar/$1');
+$routes->post('/personas/editar/(:any)', 'RegistroControlador::editar/$1');
 
 /**
  * --------------------------------------------------------------------
