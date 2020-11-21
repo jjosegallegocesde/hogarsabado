@@ -38,7 +38,9 @@ class RegistroControlador extends BaseController{
 		try{
 			
 			$modeloPersonas->insert($datosEnvio);
-			echo("Registro agregado");
+			$mensaje="Registro agregado con éxito";
+			return (redirect()->to(base_url("public/"))->with('mensaje',$mensaje));
+
 
 
 		}catch(\Exception $error){
@@ -46,14 +48,6 @@ class RegistroControlador extends BaseController{
 			echo($error->getMessage());
 
 		}
-
-
-
-
-	
-
-		
-
 
 	}
 
@@ -124,9 +118,8 @@ class RegistroControlador extends BaseController{
 		try{
 
 			$modeloPersonas->update($id,$datosEnvio);
-			echo("Registro editado con exito");
-
-
+			$mensaje="Registro editado con exito";
+			
 		}catch(\Exception $error){
 
 			echo($error->getMessage());

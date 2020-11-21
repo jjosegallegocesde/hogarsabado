@@ -40,6 +40,19 @@
                             <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#editar<?php echo($usuario["id"])?>">
                                 Editar
                             </button>
+                            
+                            <?php if(session('mensaje')):?>
+                                 
+                                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                                    <?php echo(session('mensaje'))?>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            
+                            <?php endif?>
+                            
+                           
                         </div>
 
 
@@ -71,10 +84,6 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
                 </div>
 
             <?php endforeach?>

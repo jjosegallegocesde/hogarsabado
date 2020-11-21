@@ -30,8 +30,7 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
-$routes->get('/personas', 'RegistroControlador::index');
+$routes->get('/', 'RegistroControlador::index');
 $routes->get('/personas/listado', 'RegistroControlador::buscar');
 $routes->post('/personas/registro', 'RegistroControlador::registrar');
 $routes->get('/personas/eliminar/(:any)', 'RegistroControlador::eliminar/$1');

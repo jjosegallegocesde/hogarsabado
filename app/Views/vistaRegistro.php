@@ -55,7 +55,20 @@
                 </a>
             </div>
 
+
+            <?php if(session('mensaje')):?>
             
+                <div class="alert alert-info alert-dismissible fade show mt-4" role="alert">
+                    <?php echo(session('mensaje'))?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            
+            <?php endif ?>
+
+           
+           
 
             <form class="mt-5" method="POST" action="<?php echo(base_url("public/personas/registro"))?>">
                     <h5>REGISTRO DE PERSONAS:</h5>
