@@ -102,6 +102,8 @@ class RegistroControlador extends BaseController{
 		$nombre=$this->request->getPost("nombreEditar");
 		$descripcion=$this->request->getPost("descripcionEditar");
 
+		
+
 		//2. Organizar los datos que llegan de las vistas
 		// en un arreglo asociativo 
 		//(las claves deben ser iguales a los campos o atributos de la tabla en BD)
