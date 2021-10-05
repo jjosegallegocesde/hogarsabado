@@ -28,10 +28,10 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<a class="nav-link" aria-current="page" href="<?= site_url('Home')?>">Home</a>
+							<a class="nav-link" aria-current="page" href="">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link active" href="<?= site_url('Productos')?>">Registro Productos</a>
+							<a class="nav-link active" href="">Registro Productos</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Registro Animales</a>
@@ -48,7 +48,7 @@
                 <div class="col-12 col-md-5">
                     <h3 class="fuente2 fw-bold text-center">Registro de productos</h3>
                     
-                    <form action="<?= site_url('/productos/registro/new')?>" method="POST" class="mt-4">
+                    <form action="" method="" class="mt-4">
                         <div class="mb-3">
                             <label class="form-label">Producto:</label>
                             <input type="text" class="form-control" name="producto">
@@ -73,8 +73,7 @@
                         <div class="mb-3">
                             <label class="form-label">Tipo de animal:</label>
                             <select class="form-select" name="tipoAnimal">
-                                <option selected>Selecciona una opción</option>
-                                <option value="1">Perro</option>
+                                <option value="1" selected>Perro</option>
                                 <option value="2">Gato</option>
                                 <option value="3">Ave</option>
                                 <option value="4">Caballo</option>
