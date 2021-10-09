@@ -34,6 +34,8 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->get('/productos/registro', 'Producto::index');
 
+$routes->post('/productos/registro/nuevo', 'Producto::registrar');
+
 
 
 /*

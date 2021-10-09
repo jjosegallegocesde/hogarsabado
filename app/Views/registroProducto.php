@@ -48,7 +48,7 @@
                 <div class="col-12 col-md-5">
                     <h3 class="fuente2 fw-bold text-center">Registro de productos</h3>
                     
-                    <form action=" " method=" " class="mt-4">
+                    <form action="<?= site_url('/productos/registro/nuevo') ?>" method="POST" class="mt-4">
                         <div class="mb-3">
                             <label class="form-label">Producto:</label>
                             <input type="text" class="form-control" name="producto">
