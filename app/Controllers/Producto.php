@@ -18,8 +18,20 @@ class Producto extends BaseController{
         $descripcion=$this->request->getPost("descripcion");
         $tipo=$this->request->getPost("tipo");
 
+        // Se aplican validaciones
+        if($this->validate('formularioProducto')){
+
+            echo("Todo bien apa..");
+
+        }else{
+
+            $mensaje="Tenemos campos sin llenar";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+        }
+
+
         //2. Construir un arreglo asociativo con los datos recibidos
-        $datos=array(
+       /* $datos=array(
 
             "producto"=>$producto,
             "foto"=>$foto,
@@ -28,7 +40,7 @@ class Producto extends BaseController{
             "tipo"=>$tipo
         );
 
-        print_r($datos);
+        print_r($datos);*/
 
     }
 }
