@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\ProductoModelo;
+
 class Producto extends BaseController{
     
     public function index(){
@@ -21,7 +23,35 @@ class Producto extends BaseController{
         // Se aplican validaciones
         if($this->validate('formularioProducto')){
 
-            echo("Todo bien apa..");
+            //intentar conectarme a la bd
+            //e insertar datos
+            try{
+
+                //Sacar una fotocopia de la clase (crear objeto)
+                $modelo=new ProductoModelo();
+
+                //armo el paquete de datos a registrar
+                $datos=array(
+                    "nombre"=>$producto,
+                    "foto"=>$foto,
+                    "precio"=>$precio,
+                    "descripcion"=>$descripcion,
+                    "tipo"=>$tipo
+                );
+
+                //agrego los datos
+                $modelo->insert($datos);
+
+                //Entrego una respuesta
+                $mensaje="Exito agregando el producto";
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+            }catch(\Exception $error){
+
+                $mensaje=$error->getMessage();
+                return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+            }
 
         }else{
 
