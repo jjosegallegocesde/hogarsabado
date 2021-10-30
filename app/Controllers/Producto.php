@@ -106,4 +106,31 @@ class Producto extends BaseController{
        
 
     }
+
+    public function eliminar($id){
+
+      try{
+           //Necesito llamar al modelo
+            //crear un objeto de clase modelo
+            $modelo=new ProductoModelo();
+
+             //utilizar el modelo para hablar con la BD
+            //y eliminar el registro con el id capturado
+            $modelo->where('id',$id)->delete();
+
+            //Entrego una respuesta
+            $mensaje="Exito eliminando el producto";
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+
+
+      }catch(\Exception $error){
+
+        $mensaje=$error->getMessage();
+        return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+      }
+    }
+
+
 }

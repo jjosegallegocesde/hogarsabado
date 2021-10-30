@@ -27,10 +27,31 @@
                             <div class="card-body">
                                 <h5 class="card-title"><?= $producto["nombre"]?></h5>
                                 <p class="card-text"><?= $producto["precio"]?></p>
-                                <a href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
+                                <a data-bs-toggle="modal" data-bs-target="#confirmacion<?= $producto["id"] ?>"  href="#" class="btn btn-primary"><i class="fas fa-trash-alt"></i></a>
                                 <a href="#" class="btn btn-primary"><i class="fas fa-edit"></i></a>
                             </div>
                         </div>
+
+                        <section>
+                            <div class="modal fade" id="confirmacion<?= $producto["id"] ?>">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                    <div class="modal-header fondoPrincipal text-white">
+                                        <h5 class="modal-title">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>¿Está suguro de eliminar este producto?</p>
+                                        <p><?= $producto["id"] ?></p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                        <a href="<?= site_url('/productos/eliminar/'.$producto["id"])?>" class="btn btn-danger">Aceptar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                    </div>
                 <?php endforeach?>
 
