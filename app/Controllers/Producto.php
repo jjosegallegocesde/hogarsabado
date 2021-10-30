@@ -73,4 +73,37 @@ class Producto extends BaseController{
         print_r($datos);*/
 
     }
+
+    public function buscar(){
+
+        try{
+
+            //Necesito llamar al modelo
+            //crear un objeto de clase modelo
+            $modelo=new ProductoModelo();
+
+            //utilizar el modelo para hablar con la BD
+            //y buscar todos los datos de la tabla
+            $resultado=$modelo->findAll();
+
+            //organizo los datos como una arreglo
+            //asociativo
+            $productos=array("productos"=>$resultado);
+
+            //cargar la vista entregandole los datos
+            return view('listaProductos',$productos);
+
+        }catch(\Exception $error){
+
+            $mensaje=$error->getMessage();
+            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$mensaje);
+
+        }
+        
+       
+        
+
+       
+
+    }
 }

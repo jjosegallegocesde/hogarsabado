@@ -87,9 +87,10 @@
                         
                     </form>
                 </div>
-                <div class="col-12 col-md-5 align-self-end">
+                <div class="col-12 col-md-5 align-self-end text-center">
                     <img src="<?= base_url('public/img/registro1.png')?>" alt="imagen" class="img-fluid w-100">
-                </div>
+					<a class="btn btn-primary" href="<?= site_url('/productos/listado') ?>">Ver inventario</a>
+				</div>
             </div>
         </div>
        
